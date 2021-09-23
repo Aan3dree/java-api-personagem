@@ -1,33 +1,26 @@
 package com.personagens.api.models;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name="TB_PERSONAGEM")
-public class Personagem {
-	
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+public class Personagem extends EntidadeAbstrata {
 	
 	private String nome;
 	
-	private int nivel;
+	private Integer nivel;
 	
 	private BigDecimal exp;
 	
-	private int gold;
+	private BigDecimal gold;
 	
-	private Atributos atributos;
+	@OneToMany
+	private List<Atributo> atributos;
 	
 	private Raca raca;
 	
