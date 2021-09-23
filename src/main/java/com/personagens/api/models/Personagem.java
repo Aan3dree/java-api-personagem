@@ -8,23 +8,22 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TB_PERSONAGEM")
+@Table(name = "TB_PERSONAGEM")
 public class Personagem extends EntidadeAbstrata {
-	
+
 	private String nome;
-	
+
 	private Integer nivel;
-	
+
 	private BigDecimal exp;
-	
+
 	private BigDecimal gold;
-	
+
 	@OneToMany
 	private List<Atributo> atributos;
-	
+
 	private Raca raca;
-	
+
 	private Classe classe;
-	
 
 }

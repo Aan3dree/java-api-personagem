@@ -1,7 +1,7 @@
-package com.personagens.api.models;
-
+ package com.personagens.api.models;
+ 
 import java.util.List;
-
+ 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -24,4 +24,5 @@ public class Raca extends EntidadeAbstrata {
 	public void setHabilidades(List<Habilidade> habilidades) {
 		this.habilidades = habilidades;
 	} 
-}
+ }
+
