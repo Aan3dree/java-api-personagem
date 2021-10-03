@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PersonagensRoutingModule } from './personagens-routing.module';
 import { PersonagensComponent } from './personagens/personagens.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PersonagensComponent } from './personagens/personagens.component';
   ],
   imports: [
     CommonModule,
-    PersonagensRoutingModule
+    PersonagensRoutingModule,
+    MatTableModule
   ]
 })
 export class PersonagensModule { }

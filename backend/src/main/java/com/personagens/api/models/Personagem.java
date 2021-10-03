@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name ="TB_PERSONAGEM")
 public class Personagem extends EntidadeAbstrata {
-
+ 
 	private String nome;
 
 	private Integer nivel;

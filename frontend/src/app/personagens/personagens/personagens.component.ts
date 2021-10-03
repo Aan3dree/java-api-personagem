@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonagensComponent implements OnInit {
 
+  personagens: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
