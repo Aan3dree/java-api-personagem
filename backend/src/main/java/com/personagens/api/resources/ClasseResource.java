@@ -1,5 +1,6 @@
 package com.personagens.api.resources;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -21,6 +22,7 @@ public class ClasseResource {
 	@Autowired
 	ClasseRepository classeRepository;
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/classes")
 	public List<Classe> getClasses(){
 		return classeRepository.findAll();
