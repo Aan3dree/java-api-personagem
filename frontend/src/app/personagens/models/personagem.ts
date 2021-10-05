@@ -1,12 +1,15 @@
-import * as internal from "stream";
-
 export interface Personagem {
-
+  id: number;
   nome: string;
   nivel: number;
   exp: number;
   gold: number;
-  atributos: any[];
-  raca: any;
-  classe: any;
+  forca: number;
+  inteligencia: number;
+  constituicao: number;
+  sabedoria: number;
+  carisma: number;
+  destreza: number;
+  raca: string;
+  classe: string;
 }

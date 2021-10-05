@@ -28,11 +28,13 @@ public class ClasseResource {
 		return classeRepository.findAll();
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/classe")
 	public Classe addClasse(@RequestBody Classe classe) {
 		return classeRepository.save(classe);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/classe")
 	public Classe updateClasse(@RequestBody Classe classe) {
 		return classeRepository.save(classe); 

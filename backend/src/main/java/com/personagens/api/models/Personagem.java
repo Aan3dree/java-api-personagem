@@ -20,6 +20,13 @@ public class Personagem extends EntidadeAbstrata {
 
 	private BigDecimal gold;
 
+	private Integer forca;
+	private Integer inteligencia;
+	private Integer constituicao;
+	private Integer sabedoria;
+	private Integer carisma;
+	private Integer destreza;
+
 	@OneToMany
 	private List<Atributo> atributos;
 	@OneToOne
@@ -29,6 +36,42 @@ public class Personagem extends EntidadeAbstrata {
 	
 	public String getNome() {
 		return nome;
+	}
+	public Integer getDestreza() {
+		return destreza;
+	}
+	public void setDestreza(Integer destreza) {
+		this.destreza = destreza;
+	}
+	public Integer getCarisma() {
+		return carisma;
+	}
+	public void setCarisma(Integer carisma) {
+		this.carisma = carisma;
+	}
+	public Integer getSabedoria() {
+		return sabedoria;
+	}
+	public void setSabedoria(Integer sabedoria) {
+		this.sabedoria = sabedoria;
+	}
+	public Integer getConstituicao() {
+		return constituicao;
+	}
+	public void setConstituicao(Integer constituicao) {
+		this.constituicao = constituicao;
+	}
+	public Integer getInteligencia() {
+		return inteligencia;
+	}
+	public void setInteligencia(Integer inteligencia) {
+		this.inteligencia = inteligencia;
+	}
+	public Integer getForca() {
+		return forca;
+	}
+	public void setForca(Integer forca) {
+		this.forca = forca;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;

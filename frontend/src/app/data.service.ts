@@ -3,21 +3,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Classe } from './personagens/models/classe'
+import { Personagem } from './personagens/models/personagem';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-
-
   private REST_API_SERVER = "http://localhost:8080/api";
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {}
 
-   }
-
-   httpOptions = {
+  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': 'http://localhost:4200',
@@ -40,6 +37,30 @@ export class DataService {
 
   getClasses(): Observable<Classe> {
     return this.http.get<Classe>(this.REST_API_SERVER + '/classes')
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  getPersonagens(): Observable<Personagem>{
+    return this.http.get<Personagem>(this.REST_API_SERVER + '/personagens')
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  getPersonagem(id: number): Observable<Personagem>{
+    return this.http.get<Personagem>(this.REST_API_SERVER + '/personagem/' + id)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  createPersonagem(personagem: any): Observable<Personagem>{
+    return this.http.post<Personagem>(this.REST_API_SERVER + '/personagem', JSON.stringify(personagem), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)

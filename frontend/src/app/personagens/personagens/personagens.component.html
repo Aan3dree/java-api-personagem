@@ -1,1 +1,67 @@
-<p>personagens works</p>
+<div class="demo-button-container">
+  <button mat-raised-button routerLink="create" class="demo-button" color="primary">
+    Novo Personagem
+  </button>
+</div>
+
+<div class="container">
+  <table mat-table [dataSource]="Personagem" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Nome  Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Personagem </th>
+      <td mat-cell *matCellDef="let personagens"> {{personagens.nome}} </td>
+    </ng-container>
+
+    <!-- Nivel Column -->
+    <ng-container matColumnDef="nivel">
+      <th mat-header-cell *matHeaderCellDef> Nivel </th>
+      <td mat-cell *matCellDef="let personagens"> {{personagens.nivel}} </td>
+    </ng-container>
+
+
+    <!-- Raça Column -->
+    <ng-container matColumnDef="raca">
+      <th mat-header-cell *matHeaderCellDef> Raça </th>
+      <td mat-cell *matCellDef="let personagens"> {{personagens.raca.nome}} </td>
+    </ng-container>
+
+    <!-- Classe Column -->
+    <ng-container matColumnDef="classe">
+      <th mat-header-cell *matHeaderCellDef> Classe </th>
+      <td mat-cell *matCellDef="let personagens"> {{personagens.classe.nome}} </td>
+    </ng-container>
+
+
+
+    <!-- Exp Column -->
+    <ng-container matColumnDef="exp">
+      <th mat-header-cell *matHeaderCellDef> Experiência </th>
+      <td mat-cell *matCellDef="let personagens"> {{personagens.exp}} </td>
+    </ng-container>
+
+    <!-- Gold Column -->
+    <ng-container matColumnDef="gold">
+      <th mat-header-cell *matHeaderCellDef> Dinheiro </th>
+      <td mat-cell *matCellDef="let personagens"> {{personagens.gold}} </td>
+    </ng-container>
+
+
+    <!-- Ações Column -->
+    <ng-container matColumnDef="botoes">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <td mat-cell *matCellDef="let personagens">
+        <button mat-icon-button color="primary" aria-label="" routerLink="get/{{personagens.id}}">
+          <mat-icon>dvr</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

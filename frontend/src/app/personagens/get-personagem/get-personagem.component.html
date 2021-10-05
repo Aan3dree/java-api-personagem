@@ -1,0 +1,73 @@
+<!--
+<ng-container>
+  <h3>Informações Gerais</h3>
+  <mat-list role="list">
+    <mat-list-item role="listitem">Nome: {{personagemData.nome}}</mat-list-item>
+    <mat-list-item role="listitem">Raça: {{personagemData.raca.nome}}</mat-list-item>
+    <mat-list-item role="listitem">Classe: {{personagemData.classe.nome}}</mat-list-item>
+    <mat-list-item role="listitem">Nível: {{personagemData.nivel}}</mat-list-item>
+    <mat-list-item role="listitem">Experiência: {{personagemData.exp}}</mat-list-item>
+    <mat-list-item role="listitem">Dinheiro: {{personagemData.gold}}</mat-list-item>
+  </mat-list>
+</ng-container>
+
+
+<ng-container>
+  <h3>Atributos</h3>
+  <mat-list role="list">
+    <mat-list-item role="listitem">Força: {{personagemData.forca}}</mat-list-item>
+    <mat-list-item role="listitem">Inteligencia: {{personagemData.inteligencia}}</mat-list-item>
+    <mat-list-item role="listitem">Sabedoria: {{personagemData.sabedoria}}</mat-list-item>
+    <mat-list-item role="listitem">Constituição: {{personagemData.constituicao}}</mat-list-item>
+    <mat-list-item role="listitem">Destreza: {{personagemData.destreza}}</mat-list-item>
+    <mat-list-item role="listitem">Carisma: {{personagemData.carisma}}</mat-list-item>
+  </mat-list>
+</ng-container>
+
+<ng-container>
+  <h3>Especiais</h3>
+  <mat-list role="list">
+    <mat-list-item role="listitem">Pericias: {{personagemData.classe.pericias}}</mat-list-item>
+    <mat-list-item role="listitem">Habilidades: {{personagemData.raca.habilidades[0].nome}}</mat-list-item>
+  </mat-list>
+</ng-container>
+-->
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile class="gerais">
+    <mat-list role="list">
+      <mat-list-item role="listitem">Nome: {{personagemData.nome}}</mat-list-item>
+      <mat-list-item role="listitem">Raça: {{personagemData.raca.nome}}</mat-list-item>
+      <mat-list-item role="listitem">Classe: {{personagemData.classe.nome}}</mat-list-item>
+      <mat-list-item role="listitem">Nível: {{personagemData.nivel}}</mat-list-item>
+      <mat-list-item role="listitem">Experiência: {{personagemData.exp}}</mat-list-item>
+      <mat-list-item role="listitem">Dinheiro: {{personagemData.gold}}</mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile class="atributos">
+    <mat-list role="list">
+      <mat-list-item role="listitem">Força: {{personagemData.forca}}</mat-list-item>
+      <mat-list-item role="listitem">Inteligencia: {{personagemData.inteligencia}}</mat-list-item>
+      <mat-list-item role="listitem">Sabedoria: {{personagemData.sabedoria}}</mat-list-item>
+      <mat-list-item role="listitem">Constituição: {{personagemData.constituicao}}</mat-list-item>
+      <mat-list-item role="listitem">Destreza: {{personagemData.destreza}}</mat-list-item>
+      <mat-list-item role="listitem">Carisma: {{personagemData.carisma}}</mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile class="outros">
+    <mat-list role="list">
+      <mat-list-item role="listitem">Pericias: {{personagemData.classe.pericias}}</mat-list-item>
+      <mat-list-item role="listitem">Habilidades: {{personagemData.raca.habilidades[0].nome}}</mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile class="botoes">
+    <button mat-raised-button routerLink="" class="demo-button" color="primary">
+      Editar Informações
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-raised-button routerLink="" class="demo-button" color="warn">
+      Apagar Personagem
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>
