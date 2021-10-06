@@ -37,8 +37,8 @@
   <mat-grid-tile class="gerais">
     <mat-list role="list">
       <mat-list-item role="listitem">Nome: {{personagemData.nome}}</mat-list-item>
-      <mat-list-item role="listitem">Raça: {{personagemData.raca.nome}}</mat-list-item>
-      <mat-list-item role="listitem">Classe: {{personagemData.classe.nome}}</mat-list-item>
+      <mat-list-item role="listitem">Raça: {{(personagemData.raca === null) ? personagemData.racaName : personagemData.raca.name}}</mat-list-item>
+      <mat-list-item role="listitem">Classe: {{(personagemData.classe === null) ? personagemData.classeName : personagemData.classe.name}}</mat-list-item>
       <mat-list-item role="listitem">Nível: {{personagemData.nivel}}</mat-list-item>
       <mat-list-item role="listitem">Experiência: {{personagemData.exp}}</mat-list-item>
       <mat-list-item role="listitem">Dinheiro: {{personagemData.gold}}</mat-list-item>
@@ -56,8 +56,8 @@
   </mat-grid-tile>
   <mat-grid-tile class="outros">
     <mat-list role="list">
-      <mat-list-item role="listitem">Pericias: {{personagemData.classe.pericias}}</mat-list-item>
-      <mat-list-item role="listitem">Habilidades: {{personagemData.raca.habilidades[0].nome}}</mat-list-item>
+      <mat-list-item role="listitem">Pericias: {{(personagemData.classe === null) ? '' : personagemData.classe.pericias}}</mat-list-item>
+      <mat-list-item role="listitem">Habilidades: {{(personagemData.raca === null) ? '' : personagemData.raca.habilidades[0].nome}}</mat-list-item>
     </mat-list>
   </mat-grid-tile>
   <mat-grid-tile class="botoes">

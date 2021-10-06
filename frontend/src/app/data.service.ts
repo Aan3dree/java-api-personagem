@@ -59,9 +59,27 @@ export class DataService {
     )
   }
 
-  createPersonagem(personagem: any): Observable<Personagem>{
+  createPersonagem(personagem: Personagem): Observable<Personagem>{
+    /*
+    const dataPersonagem: Personagem = {
+      id: 30,
+      nome: "Miraki Dot",
+      nivel: 2,
+      exp: 230,
+      gold: 100.00,
+      forca: 16,
+      inteligencia: 10,
+      constituicao: 12,
+      sabedoria: 12,
+      carisma: 10,
+      destreza: 16,
+      raca: 22,
+      classe: 4
+    }
+    */
     return this.http.post<Personagem>(this.REST_API_SERVER + '/personagem', JSON.stringify(personagem), this.httpOptions)
     .pipe(
+
       retry(1),
       catchError(this.handleError)
     )

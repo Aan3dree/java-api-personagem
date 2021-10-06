@@ -10,7 +10,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { ClasseComponent } from './classe/classe.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatInputModule} from '@angular/material/input';
 import { CreatePersonagemComponent } from './create-personagem/create-personagem.component';
 import { GetPersonagemComponent } from './get-personagem/get-personagem.component';
 import { EditPersonagemComponent } from './edit-personagem/edit-personagem.component';
@@ -36,7 +36,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatGridListModule,
     MatFormFieldModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule
   ]
 })
 export class PersonagensModule { }

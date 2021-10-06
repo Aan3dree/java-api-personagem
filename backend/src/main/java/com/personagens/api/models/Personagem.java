@@ -14,6 +14,22 @@ public class Personagem extends EntidadeAbstrata {
  
 	private String nome;
 
+	private String racaName;
+
+	private String classeName;
+
+	public String getRacaName() {
+		return racaName;
+	}
+	public void setRacaName(String racaName) {
+		this.racaName = racaName;
+	}
+	public String getClasseName() {
+		return classeName;
+	}
+	public void setClasseName(String classeName) {
+		this.classeName = classeName;
+	}
 	private Integer nivel;
 
 	private BigDecimal exp;

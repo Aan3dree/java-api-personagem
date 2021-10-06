@@ -1,6 +1,11 @@
+import {Classe} from './classe'
+import {Raca} from './raca'
+
 export interface Personagem {
-  id: number;
+  id?: number;
   nome: string;
+  racaName: string;
+  classeName: string;
   nivel: number;
   exp: number;
   gold: number;
@@ -10,6 +15,7 @@ export interface Personagem {
   sabedoria: number;
   carisma: number;
   destreza: number;
-  raca: string;
-  classe: string;
+  raca?: Raca['_id'];
+  classe?: Classe['_id'];
+
 }

@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { FormControl, FormGroup  } from '@angular/forms';
 import { MatFormFieldControl, MatHint, MatLabel } from '@angular/material/form-field';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/data.service';
 import { Classe } from '../models/classe';
-
+import { Personagem } from '../models/personagem';
 
 @Component({
   selector: 'app-create-personagem',
@@ -15,29 +15,26 @@ import { Classe } from '../models/classe';
 
 export class CreatePersonagemComponent implements OnInit {
 
+  //personagem: Personagem;
 
-  /*
+
   personagemForm = new FormGroup({
-    nome: new FormControl(''),
-    raca: new FormGroup({
-      id: new FormControl(undefined)
-    }),
-    classe: new FormGroup({
-      id: new FormControl(undefined)
-    }),
-    nivel: new FormControl(undefined),
-    exp: new FormControl(undefined),
-    gold: new FormControl(undefined),
-    forca: new FormControl(undefined),
-    inteligencia: new FormControl(undefined),
-    constituicao: new FormControl(undefined),
-    sabedoria: new FormControl(undefined),
-    carisma: new FormControl(undefined),
-    destreza: new FormControl(undefined)
+    nome: new FormControl(),
+    racaName: new FormControl(),
+    classeName: new FormControl(),
+    nivel: new FormControl(),
+    exp: new FormControl(),
+    gold: new FormControl(),
+    forca: new FormControl(),
+    inteligencia: new FormControl(),
+    constituicao: new FormControl(),
+    sabedoria: new FormControl(),
+    carisma: new FormControl(),
+    destreza: new FormControl()
   })
-  */
 
-  classeList: any = [];
+
+  classeList: string[] = ['L', '', '', '', ''];
 
 
   classeSelect = new FormControl();
@@ -48,14 +45,32 @@ export class CreatePersonagemComponent implements OnInit {
 
   //@Input() personagemDetails = {nome: '', raca: undefined, }
 
+
+  @Input() personagem: Personagem = {
+    nome: "Miraki Dot",
+    classeName: "Mago",
+    racaName: "Elfo",
+    nivel: 2,
+    exp: 230,
+    gold: 100.00,
+    forca: 16,
+    inteligencia: 10,
+    constituicao: 12,
+    sabedoria: 12,
+    carisma: 10,
+    destreza: 16
+  }
+
+
   constructor(
+    //public personagem: Personagem,
     public dataService: DataService,
     public actRoute: ActivatedRoute,
     public router: Router
   ) { }
 
   ngOnInit(): void {
-    this.loadClasses();
+    //this.loadClasses();
   }
 
   /*
@@ -66,6 +81,19 @@ export class CreatePersonagemComponent implements OnInit {
   }
   */
 
+
+  testPost(){
+
+    return this.dataService.createPersonagem(this.personagemForm.value).subscribe((data: {}) => {
+      console.log(data);
+      console.log(this.personagemForm.value);
+      this.router.navigate(['']);
+    })
+
+  }
+
+
+  /*
   loadClasses() {
     return this.dataService.getClasses().subscribe((data: {}) => {
       this.classeList = data;
@@ -73,5 +101,6 @@ export class CreatePersonagemComponent implements OnInit {
       console.log(this.classeSelect);
     })
   }
+  */
 
 }

@@ -13,17 +13,108 @@
 </mat-form-field>
 -->
 
-<mat-form-field appearance="fill">
-  <mat-label>Classe</mat-label>
-  <mat-select [formControl]="classeSelect" multiple>
-    <mat-select-trigger>
-      {{classeList.value ? classeList.value[0] : ''}}
-      <span *ngIf="classeList.value?.length > 1" class="example-additional-selection">
-        (+{{classeList.value.length - 1}} {{classeList.value?.length === 2 ? 'other' : 'others'}})
-      </span>
-    </mat-select-trigger>
-    <mat-option *ngFor="let classe of classeList" [value]="classe.name">{{classe.name}}</mat-option>
-  </mat-select>
-</mat-form-field>
+
+
+<h2>
+  Novo Personagem
+</h2>
+
+<div class="form-container">
+
+  <form class="example-form" [formGroup]="personagemForm">
+
+    <div class="selects">
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Escolha uma Classe</mat-label>
+        <mat-select formControlName="classeName">
+          <mat-option value="Ladino">Ladino</mat-option>
+          <mat-option value="Bardo">Bardo </mat-option>
+          <mat-option value="Mago">Mago</mat-option>
+          <mat-option value="Guerreiro">Guerreiro</mat-option>
+          <mat-option value="Clérigo">Clérigo</mat-option>
+          <mat-option value="Caçador">Caçador</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Escolha uma Raça</mat-label>
+        <mat-select formControlName="racaName">
+          <mat-option value="Humano">Humano</mat-option>
+          <mat-option value="Elfo">Elfo </mat-option>
+          <mat-option value="Anão">Anão</mat-option>
+          <mat-option value="Orc">Orc</mat-option>
+          <mat-option value="Halfling">Halfling</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="nomeclass">
+      <mat-form-field class="example-full-width" >
+        <mat-label>Nome</mat-label>
+        <input matInput  formControlName="nome">
+      </mat-form-field>
+    </div>
+
+
+    <div class="sample">
+      <mat-form-field class="example-full-width col-4">
+        <mat-label>Nivel</mat-label>
+        <input matInput  formControlName="nivel">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width col-4">
+        <mat-label>Exp</mat-label>
+        <input matInput  formControlName="exp">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width col-4">
+        <mat-label>Dinheiro</mat-label>
+        <input matInput  formControlName="gold">
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="sample">
+      <mat-form-field class="example-full-width" >
+        <mat-label>Força</mat-label>
+        <input matInput  formControlName="forca">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Inteligencia</mat-label>
+        <input matInput  formControlName="inteligencia">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Constituição</mat-label>
+        <input matInput  formControlName="constituicao">
+      </mat-form-field>
+    </div>
+
+
+    <div class="sample">
+      <mat-form-field class="example-full-width">
+        <mat-label>Sabedoria</mat-label>
+        <input matInput  formControlName="sabedoria">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Destreza</mat-label>
+        <input matInput  formControlName="destreza">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Carisma</mat-label>
+        <input matInput  formControlName="carisma">
+      </mat-form-field>
+    </div>
+
+    <button (click)="testPost()" mat-raised-button class="butao" color="primary">Criar Personagem</button>
+
+  </form>
+</div>
+
 
 

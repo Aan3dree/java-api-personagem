@@ -1,12 +1,69 @@
 
-.custom-container {
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
+h2{
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .example-additional-selection {
   opacity: 0.75;
   font-size: 0.75em;
+}
+
+.form-container{
+  border: 4px, solid, black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.sample{
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+.selects{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+mat-form-field{
+  margin: 5px;
+}
+
+.example-form {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid rgb(87, 85, 85);
+  border-radius: 10px;
+  align-items: center;
+}
+
+.nomeclass{
+  width: 65%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+.form-container{
+  display: flex;
+}
+
+.butao{
+  margin: 20px;
 }

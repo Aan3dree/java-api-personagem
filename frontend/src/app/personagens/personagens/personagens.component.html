@@ -26,13 +26,13 @@
     <!-- Raça Column -->
     <ng-container matColumnDef="raca">
       <th mat-header-cell *matHeaderCellDef> Raça </th>
-      <td mat-cell *matCellDef="let personagens"> {{personagens.raca.nome}} </td>
+      <td mat-cell *matCellDef="let personagens"> {{(personagens.raca === null)? personagens.racaName : personagens.raca.nome}} </td>
     </ng-container>
 
     <!-- Classe Column -->
     <ng-container matColumnDef="classe">
       <th mat-header-cell *matHeaderCellDef> Classe </th>
-      <td mat-cell *matCellDef="let personagens"> {{personagens.classe.nome}} </td>
+      <td mat-cell *matCellDef="let personagens"> {{(personagens.classe === null)? personagens.classeName : personagens.classe.nome}} </td>
     </ng-container>
 
 
